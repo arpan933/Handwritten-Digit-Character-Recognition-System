@@ -8,7 +8,11 @@ st.set_page_config(page_title="Handwritten Recognition System", page_icon="‚úçÔ∏
 st.title("Handwritten Digit & Character Recognition System")
 st.write("Upload a clear image containing one handwritten digit or character. The system preprocesses the image and predicts its class.")
 
-MODEL_PATH = "models/emnist_model.keras"
+MODEL_PATH = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    "models",
+    "emnist_model.keras"
+)
 LABELS = list("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
 
 @st.cache_resource
